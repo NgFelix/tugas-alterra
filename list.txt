@@ -1,0 +1,14 @@
+List perintah yang dipakai :
+git init
+git push
+git checkout
+git add .
+git commit
+git branch
+git stash
+git status
+git branch -d
+git merge --no-ff
+git pull
+git remote
+git config
