@@ -1,0 +1,4 @@
+## 3 hal yang saya pelajari adalah :
+1. Encapsulation adalah sebuah peroses pemaketan / penyatu data bersama metode – metodenya, dimana hal ini bermanfaat untuk menyembunyikan rincian – rincian implementasi dari pemakai.
+2. Data Abstraction adalah proses mengenali dan memusatkan perhatian pada karakteristik penting dari suatu situasi atau objek dan membiarkan / menyaring karakteristik yang tidak diinginkan dari situasi atau objek tersebut
+3. Inheritance adalah membuat kelas yang memperoleh fiturnya dari kelas yang sudah ada dan Polymorphism adalah antarmuka yang dapat didefinisikan dalam berbagai bentuk.
