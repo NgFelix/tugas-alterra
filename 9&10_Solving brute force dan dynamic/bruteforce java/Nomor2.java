@@ -1,27 +1,20 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ListIterator;
 
 public class Nomor2 {
-    public static void main(String[] args) {
-        int input = 123;
-        int[] money = { 1, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000 };
-        ArrayList<Integer> moneyChange = new ArrayList<Integer>();
-        for (int i = 0; i<money.length; i++) {
-            if (input > money[i]) {
-                //input = money[i];
-                moneyChange.add(money[i]);
-                //System.out.println(input);
+    public static List<Integer> change(int money){
+        var c2 = List.of(10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1);
+        List<Integer> result = List.of();
+        for (var c : c2){
+            while(money>=c){
+                result.add(money);
+                money = money - c;
             }
         }
-        ListIterator li = moneyChange.listIterator(moneyChange.size());
-        int changes = 0;
-        while(li.hasPrevious()){
-            int temp = (int) li.previous();
-            if(temp<input){
-                // System.out.println(temp);
-                changes = changes+temp;
-                System.out.println(changes);
-             }
-        }
+        return result;
+    }
+    public static void main(String[] args) {
+        System.out.println(change(534));
     }
 }

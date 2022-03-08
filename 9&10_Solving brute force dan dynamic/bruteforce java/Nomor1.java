@@ -1,28 +1,18 @@
 public class Nomor1 {
-    public static void main(String[] args) {
-        int a = 2, b = 3, n = 7;
-        GfG.solution(a, b, n);
-    }class GfG {
-
-            // function to find the solution
-            static void solution(int a, int b, int n)
-            {
-                // traverse for all possible values
-                for (int i = 0; i * a <= n; i++)
-                {
-
-                    // check if it is satisfying the equation
-                    if ((n - (i * a)) % b == 0)
-                    {
-                        System.out.println("x = " + i +
-                                ", y = " +
-                                (n - (i * a)) / b);
-
-                        return ;
-                    }
+    public static String SimpleEq(int a,int b, int c){
+        for(int i=1; i<=a; i++){
+            for(int j=i+1; j<=a; j++){
+                var k = a - (i+j);
+                if(i * j * k == b && ((i*i) + (j*j) + (k*k) == c)){
+                    var temp = i + " " + j + " " + k;
+                    return temp;
                 }
-
-                System.out.println("No solution");
             }
-}
+        }
+        return null;
+    }
+    public static void main(String[] args) {
+        System.out.println(SimpleEq(6, 6, 14));
+
+    }
 }
