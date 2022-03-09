@@ -66,7 +66,7 @@ public class Nomor1 {
             this.Makanan = makanan;
         }
     }
-    public static class Flowerclass {
+    public static class flowerclass {
         private String Jenis;
         private String Color;
         private String NumofPetal;
