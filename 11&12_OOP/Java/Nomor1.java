@@ -16,7 +16,7 @@ public class Nomor1 {
                 + "Makanan : "
                 + fish.getMakanan());
 
-        Flowerclass flower = new flowerclass();
+        Flowerclass flower = new Flowerclass();
         flower.setJenis("Bangkai");
         flower.setColor("Merah");
         flower.setNumofPetal("12");
