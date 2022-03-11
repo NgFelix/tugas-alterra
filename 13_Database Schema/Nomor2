@@ -1,0 +1,64 @@
+CREATE TABLE "Operators" (
+	"Admin_Operator"	TEXT,
+	PRIMARY KEY("Admin_Operator")
+);
+
+CREATE TABLE "Payment_Method" (
+	"ID_Payment"	INTEGER,
+	"ID_Order_Detail"	INTEGER,
+	"Jenis Pembayaran"	TEXT,
+	PRIMARY KEY("ID_Payment")
+);
+CREATE TABLE "Product" (
+	"ID_Product"	INTEGER,
+	"Nama Product"	TEXT,
+	"Harga Product"	INTEGER,
+	"Quantity Product"	INTEGER,
+	"Description"	TEXT,
+	"Product Type"	TEXT,
+	PRIMARY KEY("ID_Product")
+);
+CREATE TABLE "Product_Description" (
+	"ID_Product_Description"	INTEGER,
+	"ID_Type"	INTEGER,
+	"ID_Product"	INTEGER,
+	FOREIGN KEY("ID_Type") REFERENCES "Product_Description",
+	FOREIGN KEY("ID_Product") REFERENCES "Product_Description",
+	PRIMARY KEY("ID_Product_Description")
+);
+CREATE TABLE "Product_Type" (
+	"ID_Product_Type"	INTEGER,
+	"ID_Type"	INTEGER,
+	"ID_Product"	INTEGER,
+	FOREIGN KEY("ID_Type") REFERENCES "Product_Type",
+	PRIMARY KEY("ID_Product_Type")
+);
+CREATE TABLE "Transaction" (
+	"ID_Transaction"	INTEGER,
+	"ID_Customer"	INTEGER,
+	"Order Status"	TEXT,
+	"Order Alamat"	TEXT,
+	"Order Data"	TEXT,
+	PRIMARY KEY("ID_Transaction")
+);
+CREATE TABLE "Transaction_Detail" (
+	"ID_Transaction_Detail"	INTEGER,
+	"ID_Product"	INTEGER,
+	"ID_Order"	INTEGER,
+	"Harga"	INTEGER,
+	"Description"	TEXT,
+	"Quantity Product"	INTEGER,
+	FOREIGN KEY("ID_Product") REFERENCES "Transaction_Detail",
+	PRIMARY KEY("ID_Transaction_Detail")
+);
+CREATE TABLE "User" (
+	"ID_User"	INTEGER,
+	"Nama"	TEXT,
+	"Alamat"	TEXT,
+	"Tanggal Lahir"	INTEGER,
+	"Status User"	TEXT,
+	"Gender"	TEXT,
+	"Created_At"	TEXT,
+	"Update_At"	TEXT,
+	PRIMARY KEY("ID_User")
+);
