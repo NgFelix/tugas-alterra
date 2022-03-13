@@ -25,6 +25,17 @@ public class Nomor1 {
                 + " "
                 + "Color : "
                 + flower.getColor());
+                
+                carclass car = new carclass();
+        car.setType("Sedan");
+        car.setColor("Merah");
+        car.setNumofTire("4");
+        System.out.println("Saya mobil dengan detail, " + "Jenis: "
+                + car.getType()
+                + " "
+                + "Color : "
+                + car.getColor());
+    }
     }
 
     public static class catclass {
@@ -91,4 +102,29 @@ public class Nomor1 {
         }
 
     }
-}
+    public static class carclass {
+        private String Type;
+        private String Color;
+        private String NumofTire;
+
+        public  String getType() {
+            return Type;
+        }
+        public void setType(String jenis) {
+            this.Type = type;
+        }
+        public  String getColor() {
+            return Color;
+        }
+        public void setColor(String color) {
+            this.Color = color;
+        }
+        public  String getNumofTire() {
+            return NumofTire;
+        }
+        public void setNumofPetal(String numofTire) {
+            this.NumofTire = numofTire;
+        }
+
+    }
+
