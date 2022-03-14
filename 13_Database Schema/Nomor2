@@ -1,64 +1,74 @@
-CREATE TABLE "Operators" (
-	"Admin_Operator"	TEXT,
-	PRIMARY KEY("Admin_Operator")
+-- CREATE DATABASE
+CREATE DATABASE alta_online_shop;
+USE alta_online_shop;
+
+-- CREATE TABLE
+create table users(
+ID int not null auto_increment primary key,
+Name varchar(255),
+status smallint,
+dob date,
+gender char(1),
+created_at timestamp,
+update_at timestamp
 );
 
-CREATE TABLE "Payment_Method" (
-	"ID_Payment"	INTEGER,
-	"ID_Order_Detail"	INTEGER,
-	"Jenis Pembayaran"	TEXT,
-	PRIMARY KEY("ID_Payment")
+create table product(
+ID int auto_increment primary key,
+product_type_id int,
+operator_id int,
+code varchar(50),
+nama varchar(100),
+status smallint,
+create_at timestamp,
+update_at TIMESTAMP
 );
-CREATE TABLE "Product" (
-	"ID_Product"	INTEGER,
-	"Nama Product"	TEXT,
-	"Harga Product"	INTEGER,
-	"Quantity Product"	INTEGER,
-	"Description"	TEXT,
-	"Product Type"	TEXT,
-	PRIMARY KEY("ID_Product")
+
+create table product_types(
+ID int not null auto_increment primary key,
+name VARCHAR(255),
+create_at timestamp,
+update_at TIMESTAMP
 );
-CREATE TABLE "Product_Description" (
-	"ID_Product_Description"	INTEGER,
-	"ID_Type"	INTEGER,
-	"ID_Product"	INTEGER,
-	FOREIGN KEY("ID_Type") REFERENCES "Product_Description",
-	FOREIGN KEY("ID_Product") REFERENCES "Product_Description",
-	PRIMARY KEY("ID_Product_Description")
+
+create table product_description(
+ID int not null auto_increment primary key,
+description TEXT,
+create_at timestamp,
+update_at TIMESTAMP
 );
-CREATE TABLE "Product_Type" (
-	"ID_Product_Type"	INTEGER,
-	"ID_Type"	INTEGER,
-	"ID_Product"	INTEGER,
-	FOREIGN KEY("ID_Type") REFERENCES "Product_Type",
-	PRIMARY KEY("ID_Product_Type")
+
+create table operator(
+ID int  not null auto_increment primary key,
+name VARCHAR(255),
+create_at TIMESTAMP,
+update_at TIMESTAMP
 );
-CREATE TABLE "Transaction" (
-	"ID_Transaction"	INTEGER,
-	"ID_Customer"	INTEGER,
-	"Order Status"	TEXT,
-	"Order Alamat"	TEXT,
-	"Order Data"	TEXT,
-	PRIMARY KEY("ID_Transaction")
+
+CREATE TABLE transaction(
+ID int not null auto_increment primary key,
+User_Id int,
+Payment_Method_id int,
+status varchar(10),
+total_qty int(11),
+total_price numeric(25,2),
+created_at timestamp,
+uptdae_at timestamp
 );
-CREATE TABLE "Transaction_Detail" (
-	"ID_Transaction_Detail"	INTEGER,
-	"ID_Product"	INTEGER,
-	"ID_Order"	INTEGER,
-	"Harga"	INTEGER,
-	"Description"	TEXT,
-	"Quantity Product"	INTEGER,
-	FOREIGN KEY("ID_Product") REFERENCES "Transaction_Detail",
-	PRIMARY KEY("ID_Transaction_Detail")
+
+CREATE TABLE transaction_detail(
+ID int not null auto_increment primary key,
+status varchar(10),
+qty int(11),
+price numeric(25,2),
+created_at timestamp,
+uptdae_at timestamp
 );
-CREATE TABLE "User" (
-	"ID_User"	INTEGER,
-	"Nama"	TEXT,
-	"Alamat"	TEXT,
-	"Tanggal Lahir"	INTEGER,
-	"Status User"	TEXT,
-	"Gender"	TEXT,
-	"Created_At"	TEXT,
-	"Update_At"	TEXT,
-	PRIMARY KEY("ID_User")
+
+CREATE TABLE payment_methods(
+ID int not null auto_increment primary key,
+name varchar(255),
+status smallint,
+created_at timestamp,
+update_at timestamp
 );
