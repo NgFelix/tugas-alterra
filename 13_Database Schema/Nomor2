@@ -10,7 +10,7 @@ status smallint,
 dob date,
 gender char(1),
 created_at timestamp,
-update_at timestamp
+updated_at timestamp
 );
 
 create table product(
@@ -20,29 +20,29 @@ operator_id int,
 code varchar(50),
 nama varchar(100),
 status smallint,
-create_at timestamp,
-update_at TIMESTAMP
+created_at timestamp,
+updated_at TIMESTAMP
 );
 
 create table product_types(
 ID int not null auto_increment primary key,
 name VARCHAR(255),
-create_at timestamp,
-update_at TIMESTAMP
+created_at timestamp,
+updated_at TIMESTAMP
 );
 
 create table product_description(
 ID int not null auto_increment primary key,
 description TEXT,
-create_at timestamp,
-update_at TIMESTAMP
+created_at timestamp,
+updated_at TIMESTAMP
 );
 
 create table operator(
 ID int  not null auto_increment primary key,
 name VARCHAR(255),
-create_at TIMESTAMP,
-update_at TIMESTAMP
+created_at TIMESTAMP,
+updated_at TIMESTAMP
 );
 
 CREATE TABLE transaction(
@@ -53,7 +53,7 @@ status varchar(10),
 total_qty int(11),
 total_price numeric(25,2),
 created_at timestamp,
-uptdae_at timestamp
+updated_at timestamp
 );
 
 CREATE TABLE transaction_detail(
@@ -62,7 +62,7 @@ status varchar(10),
 qty int(11),
 price numeric(25,2),
 created_at timestamp,
-uptdae_at timestamp
+updated_at timestamp
 );
 
 CREATE TABLE payment_methods(
@@ -70,5 +70,31 @@ ID int not null auto_increment primary key,
 name varchar(255),
 status smallint,
 created_at timestamp,
-update_at timestamp
+updated_at timestamp
 );
+
+CREATE TABLE kurir(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255),
+created_at TIMESTAMP,
+updated_at TIMESTAMP
+);
+
+ALTER TABLE payment_method ADD column paymnet_method_id INT
+ALTER TABLE product ADD FOREIGN KEY (product_type_id) 
+REFERENCES  product_types(ID);
+ALTER TABLE product ADD FOREIGN KEY (operator_id) 
+REFERENCES  operator(ID);
+ALTER TABLE transaction ADD FOREIGN KEY (User_Id) 
+REFERENCES  users(ID);
+ALTER TABLE transaction ADD FOREIGN KEY (Payment_Method_id) 
+REFERENCES  payment_methods(ID);
+
+-- add kolom di tabel ongkos_dasar kurir
+ALTER TABLE kurir ADD COLUMN ongkos_dasar INT;
+
+-- rename tabel kurir
+ALTER TABLE kurir RENAME TO shipping;
+
+-- hapus/drop tabel shipping
+DROP TABLE shipping;
