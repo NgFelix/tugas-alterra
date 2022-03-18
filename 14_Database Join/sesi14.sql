@@ -206,7 +206,7 @@ VALUES(5, 1, 1, 3, 50.000, '2022-03-20 17:00:00', '2022-03-20 18:01:00');
 -- select
 SELECT name , gender FROM users WHERE gender = 'M';
 SELECT * FROM product WHERE ID = 3;
-SELECT * FROM users WHERE created_at BETWEEN '2022-03-9 11:04:13' AND '2022-03-16 11:04:13' OR name LIKE '%a%';
+SELECT * FROM users WHERE created_at BETWEEN '2022-03-9 11:00:00' AND '2022-03-16 11:00:00' OR name LIKE '%a%';
 SELECT name , gender FROM users WHERE gender = 'F';
 SELECT * FROM users ORDER BY Name ASC;
 select * from product where ID between 1 and 5;
@@ -230,3 +230,25 @@ SELECT * FROM transaction WHERE user_id = 1 UNION SELECT * FROM transaction WHER
 SELECT SUM(total_price) FROM transaction WHERE user_id = 1;
 -- 3
 SELECT COUNT(1) FROM transaction_detail WHERE product_id = 2;
+--4
+SELECT * FROM product INNER JOIN product type ON product.product_type id
+= product_type. id
+--5
+SELECT t.*, product.nama, users.nama FROM transaction t INNER JOIN
+trasaction detail d ON t.id = d. transaction id INNER JOIN product p ON p.id
+d.product_id INNER JOIN users
+u ON u.id = t.user id;
+
+--6
+DELIMITER $$
+CREATE TRIGGER user delete BEFORE ON users FOR EACH ROW BEGIN
+DELETE FROM product WHERE user id = old.id;
+END$$
+--7
+DELIMITER $$
+CREATE TRIGGER transaksi_details_delete
+AFTER DELETE ON transaction_details FOR EACH ROW
+BEGIN
+UPDATE FROM transactions SET total_qty = total_qty - old.qty;
+UPDATE FROM transactions SET total_price = total_price - old.price;
+END$$

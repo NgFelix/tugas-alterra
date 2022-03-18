@@ -1,0 +1,99 @@
+db.operators.insert({_id: 1, name:"aldo", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.operators.insert({_id: 2, name:"aldi", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.operators.insert({_id: 3,name:"jery", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.operators.insert({_id: 4,name:"kevin", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.operators.insert({_id: 5,name:"abed", created_at:"2022-16-3", update_at:"2022-18-3"})
+
+-- b
+db.product_type.insert({_id: 1,name:"Kuota game", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.product_type.insert({_id: 2,name:"Kuota internet", created_at:"2022-16-3", update_at:"2022-18-3"})
+db.product_type.insert({_id: 3,name:"Paket Telefon", created_at:"2022-16-3", update_at:"2022-18-3"})
+
+-- c
+db.product.insert({_id: 1,product_type_id:"1", operator_id:"3", code:"001", nama:"Paket Harian", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.product.insert({_id: 2,product_type_id:"1", operator_id:"3", code:"001", nama:"Paket Mingguan", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- d
+db.product.insert({_id: 3,product_type_id:"2", operator_id:"1", code:"001", nama:"Paket harian", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.product.insert({_id:4, product_type_id:"2", operator_id:"1", code:"001", nama:"Paket mingguan", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.product.insert({ _id: 5,product_type_id:"2", operator_id:"1", code:"001", nama:"Paket bulanan", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- e
+db.product.insert({_id: 6,product_type_id:"3", operator_id:"4", code:"003", nama:"Paket 1 hari", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.product.insert({_id: 7,product_type_id:"3", operator_id:"4", code:"003", nama:"Paket 1 minggu", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.product.insert({_id: 8,product_type_id:"3", operator_id:"4", code:"003", nama:"Paket 3 minggu", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- f
+db.product_description.insert({_id: 1,description:"Paket internet 1 hari", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 2,description:"Paket internet 1 minggu", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 3,description:"Paket internet harian", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 4,description:"Paket internet mingguan", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 5,description:"Paket internet bulanan", created_at:"2022-17-3",updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 6,description:"Paket internet 1 hari", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 7,description:"Paket internet 1 minggu", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+db.product_description.insert({_id: 8,description:"Paket internet 3 minggu", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- g
+db.payment_method.insert({_id: 1,name:"gopay", status:"1", created_at:"2022-17-3", update_at:"2022-17-3" })
+db.payment_method.insert({_id: 2,name:"grab", status:"1", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.payment_method.insert({_id: 3,name:"shopee", status:"1", created_at:"2022-17-3", update_at:"2022-17-3"})
+
+-- h
+db.users.insert({_id: 1,name:"Aldo", status: "1", dob:"1999-1-9", gender:"M", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.users.insert({_id: 2,name:"aldi", status: "1", dob:"2000-10-19", gender:"M", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.users.insert({_id: 3,name:"eli", status: "1", dob:"2002-12-12", gender:"F", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.users.insert({_id: 4,name:"Rici", status: "1", dob:"1998-11-9", gender:"M", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.users.insert({_id: 5,name:"kevin", status: "1", dob:"1998-8-9", gender:"M", created_at:"2022-17-3", update_at:"2022-17-3"})
+db.users.insert({_id: 6,name:"abed", status: "1", dob:"2003-10-9", gender:"M", created_at:"2022-17-3", update_at:"2022-17-3"})
+-- i
+-- user id 1
+db.transaction.insert({_id: 1,user_id:"1", payment_method_id:"1", status:"1", total_qty:"3", total_price:"30.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 2,user_id:"1", payment_method_id:"1", status:"1", total_qty:"2", total_price:"20.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 3,user_id:"1", payment_method_id:"1", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- user id 2
+db.transaction.insert({_id: 4,user_id:"2", payment_method_id:"2", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 5,user_id:"2", payment_method_id:"1", status:"1", total_qty:"2", total_price:"20.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 6,user_id:"2", payment_method_id:"1", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- user id 3
+db.transaction.insert({_id: 7,user_id:"3", payment_method_id:"1", status:"1", total_qty:"3", total_price:"30.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 8,user_id:"3", payment_method_id:"2", status:"1", total_qty:"2", total_price:"20.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 9,user_id:"3", payment_method_id:"2", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- user id 4
+db.transaction.insert({_id: 10,user_id:"4", payment_method_id:"1", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 11,user_id:"4", payment_method_id:"2", status:"1", total_qty:"2", total_price:"20.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 12,user_id:"4", payment_method_id:"2", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- user id 5
+db.transaction.insert({_id: 13,user_id:"5", payment_method_id:"2", status:"1", total_qty:"5", total_price:"50.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 14,user_id:"5", payment_method_id:"1", status:"1", total_qty:"2", total_price:"20.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction.insert({_id: 15,user_id:"5", payment_method_id:"3", status:"1", total_qty:"1", total_price:"10.00", created_at:"2022-17-3", updated_at:"2022-17-3"})
+
+-- j
+
+
+-- 2 READ
+db.users.find({gender:"M"})
+
+-- b
+db.users.find({_id:3})
+db.users.find({gender:"F"}).count();
+db.users.find().sort({name:1})
+db.product.find().limit(5)
+
+-- UPDATE
+db.product.update({_id:1}, {product_type_id:"2", operator_id:"1", code:"001", nama:"product_dummy", status:"1", created_at:"2022-17-3", updated_at:"2022-17-3"})
+db.transaction_detail.update({product_id:"1"}, {product_id:"1", transaction_id:"1",status:"1", qty:"3", price:"30.000"})
+
+-- DELETE
+db.product.remove({_id : 1})
+db.product.remove({product_type_id : "1"})
