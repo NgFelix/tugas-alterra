@@ -1,0 +1,3 @@
+1. GET digunakan untuk membaca sebuah record atau daftar record
+2. POST digunakan untuk menambah sebuah record
+3. DELETE digunakan untuk menghapus sebuah sebuah record
