@@ -1,0 +1,4 @@
+## 3 hal yang saya pelajari adalah :
+1. Terdapat 3 software testing yaitu functional testing, non functional testing, maintenance testing
+2. Functional testing lebih berfokus pada hasil eksekusi dari proses setiap fitur di aplikasi sudah bekerja dengan baik berdasarkan kebutuhan klien. Functional testing tidak menitikberatkan pada source code tetapi lebih kepada bisnis proses yang akan berjalan.
+3. Non-functional testing merupakan suatu pengujian yang tidak secara langsung menggambarkan layanan spesifik dalam sistem perangkat lunak, non-functional sistem biasanya menggambarkan seberapa bagus suatu perangkat lunak atau sistem terhadap development process, standard, dan waktu
